@@ -1,0 +1,6 @@
+@Books_HostAddress = http://localhost:8080
+
+GET {{Books_HostAddress}}/swagger/
+Accept: application/json
+
+###

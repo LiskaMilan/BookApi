@@ -11,12 +11,12 @@ namespace Books.Infrastructure
             _context = context;
         }
 
-        public async Task<T> Delete(int id)
+        public async Task<T?> Delete(int id)
         {
             var entity = await _context.Set<T>().FindAsync(id);
             if (entity == null)
             {
-                throw new ArgumentException($"Entity with id {id} not found.");
+                return null;
             }
 
             _context.Set<T>().Remove(entity);
@@ -42,12 +42,12 @@ namespace Books.Infrastructure
             return entity;
         }
 
-        public async Task<T> Update(int id, T entity)
+        public async Task<T?> Update(int id, T entity)
         {
             var existingEntity = await _context.Set<T>().FindAsync(id);
             if (existingEntity == null)
             {
-                throw new ArgumentException($"Entity with id {id} not found.");
+                return null;
             }
 
             entity.Id = existingEntity.Id;

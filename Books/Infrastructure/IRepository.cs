@@ -7,7 +7,7 @@ namespace Books.Infrastructure
         Task<List<T>> GetAll();
         Task<T> GetById(int id);
         Task<T> Save(T entity);
-        Task<T> Update(int id, T entity);
-        Task<T> Delete(int id);
+        Task<T?> Update(int id, T entity);
+        Task<T?> Delete(int id);
     }
 }

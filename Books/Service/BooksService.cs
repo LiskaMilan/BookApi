@@ -12,7 +12,7 @@ namespace Books.Service
             _bookRepository = bookRepository;
         }
 
-        public async Task<Book> DeleteBook(int id)
+        public async Task<Book?> DeleteBook(int id)
         {
             return await _bookRepository.Delete(id);
         }
@@ -32,7 +32,7 @@ namespace Books.Service
             return await _bookRepository.Save(book);
         }
 
-        public async Task<Book> UpdateBook(int id, Book book)
+        public async Task<Book?> UpdateBook(int id, Book book)
         {
             return await _bookRepository.Update(id, book);
         }
